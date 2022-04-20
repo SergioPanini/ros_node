@@ -12,21 +12,12 @@ from custom_messages import ComandMessage
 
 
 def publishMethod():
-    #pub = rospy.Publisher('talker', Float64, queue_size=10) # defining the publisher by topic, message type
-    #pub = rospy.Publisher('talker', String, queue_size=10) # defining the publisher by topic, message type
     pub = rospy.Publisher('coordinates', Point, queue_size=10) # defining the publisher by topic, message type
     pub2 = rospy.Publisher('command', ComandMessage, queue_size=10) # defining the publisher by topic, message type
     
     rospy.init_node('publish_node', anonymous=True) # defining the ros node - publish node 
     rate = rospy.Rate(10) # 10hz # fequency at which the publishing occurs
     while not rospy.is_shutdown():
-        
-        
-        #print(msg)
-        #publish_msg = str(datetime.datetime.now())
-        #pub.publish("Currenet time: " + publish_msg) # publishing 
-        #pub.publish(point) # publishing 
-
 
         count_points = random.randint(1, 9)
 
